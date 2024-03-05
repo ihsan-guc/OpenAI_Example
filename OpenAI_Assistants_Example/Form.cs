@@ -48,7 +48,7 @@ namespace OpenAI_Assistants_Example
             }
             else
             {
-                var answerResponse = await GetAnswer(threadsId);
+                var answerResponse = await GetAnswer();
                 if (answerResponse.data.Count != 2)
                 {
                     MessageBox.Show("Please try again");
@@ -96,14 +96,14 @@ namespace OpenAI_Assistants_Example
         }
         public async Task<StatusModel> CheckStatus()
         {
-            var response = await _httpClient.GetAsync($"https://api.openai.com/v1/threads/thread_tAI74y30rdBc5Cnw4ZkEk6zG/runs/run_VWO6NwXApYwmwfw02sIbi4UY");
+            var response = await _httpClient.GetAsync($"https://api.openai.com/v1/threads/{threadsId}/runs/{runId}");
             var responseContent = await response.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<StatusModel>(responseContent);
             return result;
         }
-        public static async Task<AnswerModel> GetAnswer(string id)
+        public async Task<AnswerModel> GetAnswer()
         {
-            var response = await _httpClient.GetAsync($"https://api.openai.com/v1/threads/{id}/messages");
+            var response = await _httpClient.GetAsync($"https://api.openai.com/v1/threads/{threadsId}/messages");
             var responseContent = await response.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<AnswerModel>(responseContent);
         }
