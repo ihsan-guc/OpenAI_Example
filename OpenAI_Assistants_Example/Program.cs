@@ -11,7 +11,8 @@ namespace OpenAI_Assistants_Example
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new AskQuestionForm());
+            //Application.Run(new AskQuestionForm());
+            Application.Run(new AskQuestionWithImageForm());
         }
     }
 }
