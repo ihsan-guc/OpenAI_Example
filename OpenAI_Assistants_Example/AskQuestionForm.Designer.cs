@@ -1,6 +1,6 @@
 ﻿namespace OpenAI_Assistants_Example
 {
-    partial class Form
+    partial class AskQuestionForm
     {
         /// <summary>
         /// Required designer variable.

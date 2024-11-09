@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace OpenAI_Assistants_Example
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class AskQuestionForm : System.Windows.Forms.Form
     {
         public string _openAIKey = "";
         public string _assistant_id = "";
@@ -13,7 +13,7 @@ namespace OpenAI_Assistants_Example
         public string threadsId = "";
         public string runId = "";
 
-        public Form()
+        public AskQuestionForm()
         {
             _openAIKey = "YOUR_OPENAI_KEY";
             _assistant_id = "YOUR_ASSISTANT_ID_KEY";
